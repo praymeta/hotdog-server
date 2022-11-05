@@ -10,15 +10,14 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-
+        dialect: org.hibernate.dialect.MySQL5Dialect
 jwt:
-  header: ${JWT_HEADER}
   secret: ${JWT_SECRET}
-  validTime: ${JWT_VALID_TIME}
+  validTime: ${JWT_VALIDTIME}
